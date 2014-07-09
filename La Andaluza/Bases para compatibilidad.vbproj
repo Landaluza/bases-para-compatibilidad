@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0518B3B6-EE66-4D4F-A0E3-F953E0AC2A37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>BasesParaCompatibilidad</RootNamespace>
+    <AssemblyName>BasesParaCompatibilidad</AssemblyName>
+    <MyType>Windows</MyType>
+    <TargetZone>Custom</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>Resources\LogoBandejaLa2.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>247F7EA75E27118A015C3762DB5731458C9579A9</ManifestCertificateThumbprint>
+    <ManifestKeyFile>La Andaluza Produccion_TemporaryKey.pfx</ManifestKeyFile>
+    <SignManifests>false</SignManifests>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <OptionStrict>Off</OptionStrict>
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>\\192.168.1.200\datos\Informatica\La Andaluza app\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>es-ES</TargetCulture>
+    <ProductName>La Andaluza Nueva</ProductName>
+    <PublisherName>La Andaluza</PublisherName>
+    <MinimumRequiredVersion>1.0.0.20</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>193</ApplicationRevision>
+    <ApplicationVersion>2014.2.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42032,42036</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42032,42036</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <WarningsAsErrors>41998,42004,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DgvFilterPopup, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Runtime.CompilerServices" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bases\Clases\FechaQs.vb" />
+    <Compile Include="Bases\Conf\Components\DataGridViewPrintDocument.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bases\Conf\Config.vb" />
+    <Compile Include="Bases\Extensiones\ComboBoxExtension.vb" />
+    <Compile Include="Bases\Extensiones\dtpBoxExtension.vb" />
+    <Compile Include="Bases\Extensiones\TabPageExtension.vb" />
+    <Compile Include="Bases\Extensiones\DataGridViewExtension.vb" />
+    <Compile Include="Bases\Extensiones\ExcelExtension.vb" />
+    <Compile Include="Bases\Extensiones\WordExtension.vb" />
+    <Compile Include="Bases\Form\Dialogos\frmEspera.Designer.vb">
+      <DependentUpon>frmEspera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Form\Dialogos\frmEspera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\Interfaces\BotleForm.vb" />
+    <Compile Include="Bases\DataBase\StoredProcedureComp.vb" />
+    <Compile Include="Bases\Clases\Calendar.vb" />
+    <Compile Include="Bases\Clases\MicrosoftOfficeExporter.vb" />
+    <Compile Include="Bases\Clases\Printer.vb" />
+    <Compile Include="Bases\Clases\SMS.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Clases\Web.vb" />
+    <Compile Include="Bases\BD\DataBase.vb" />
+    <Compile Include="Bases\Form\Dialogos\frmEntrada.Designer.vb">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Form\Dialogos\frmEntrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\Form\Panels\Component1.Designer.vb">
+      <DependentUpon>Component1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Form\Panels\Component1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bases\Dependencias\FrmAheredarOld.Designer.vb">
+      <DependentUpon>FrmAheredarOld.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Dependencias\FrmAheredarOld.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\Dependencias\FrmAHeredarEntOld.Designer.vb">
+      <DependentUpon>FrmAHeredarEntOld.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Dependencias\FrmAHeredarEntOld.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\DataBase\DataBussines.vb" />
+    <Compile Include="Bases\DataBase\DataBussinesParameter.vb" />
+    <Compile Include="Bases\Form\GridSimpleForm.Designer.vb">
+      <DependentUpon>GridSimpleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Form\GridSimpleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\Form\DetailedSimpleForm.Designer.vb">
+      <DependentUpon>DetailedSimpleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Form\DetailedSimpleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\Interfaces\Queriable.vb" />
+    <Compile Include="Bases\Interfaces\Savable.vb" />
+    <Compile Include="Bases\DataBase\StoredProcedure.vb" />
+    <Compile Include="Bases\Interfaces\wizardable.vb" />
+    <Compile Include="Bases\Clases\File.vb" />
+    <Compile Include="Bases\Clases\NativeMethods.vb" />
+    <Compile Include="Bases\Clases\Pantalla.vb" />
+    <Compile Include="Bases\Clases\Consola.vb" />
+    <Compile Include="Bases\BD\BD.vb" />
+    <Compile Include="Bases\Conf\Components\clsCuadroDeTexto.vb" />
+    <Compile Include="Bases\Conf\Components\CuadroDeTextoMuestra.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bases\Conf\Components\ctlCuadroDeTexto.vb" />
+    <Compile Include="Bases\Conf\Components\CuadroDeTexto.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bases\Conf\Components\CuadroTextoNumerosNegativos.Designer.vb">
+      <DependentUpon>CuadroTextoNumerosNegativos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Conf\Components\CuadroTextoNumerosNegativos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bases\Clases\Encriptacion.vb" />
+    <Compile Include="Bases\Conf\Components\MessageDialogue.Designer.vb">
+      <DependentUpon>MessageDialogue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Conf\Components\MessageDialogue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Bases\Clases\Imagen.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bases\Form\Dialogos\frmEspera.resx">
+      <DependentUpon>frmEspera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Form\Dialogos\frmEntrada.resx">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Dependencias\FrmAheredarOld.es.resx">
+      <DependentUpon>FrmAheredarOld.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Dependencias\FrmAheredarOld.resx">
+      <DependentUpon>FrmAheredarOld.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Dependencias\FrmAHeredarEntOld.resx">
+      <DependentUpon>FrmAHeredarEntOld.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Form\GridSimpleForm.es.resx">
+      <DependentUpon>GridSimpleForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Form\GridSimpleForm.resx">
+      <DependentUpon>GridSimpleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Form\DetailedSimpleForm.resx">
+      <DependentUpon>DetailedSimpleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bases\Conf\Components\MessageDialogue.resx">
+      <DependentUpon>MessageDialogue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\Entities.datasource" />
+    <None Include="My Project\DataSources\PaletsProducidosEntities.datasource" />
+    <None Include="My Project\DataSources\PedidosProveedoresDocumentosContainer.datasource" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Iconos\LA  sin texto 48 x 48.bmp" />
+    <Content Include="Iconos\LA  sin texto 48 x 48.ico" />
+    <Content Include="Iconos\LA con texto 256 x 256.ico" />
+    <Content Include="Iconos\LA con texto 48 x 48.ico" />
+    <Content Include="Iconos\LogoLA.ico" />
+    <Content Include="Iconos\LogoLA.jpg" />
+    <Content Include="Iconos\Modificar.ico" />
+    <Content Include="Iconos\print_ico.jpg" />
+    <Content Include="Iconos\refresh.png" />
+    <Content Include="Iconos\Solo texto.jpg" />
+    <Content Include="Resources\window_new.ico" />
+    <Content Include="Resources\window_new_3.ico" />
+    <None Include="Resources\text-x-makefile.png" />
+    <None Include="Resources\window_duplicate.ico" />
+    <None Include="Resources\page_excel_16.png" />
+    <None Include="Resources\page_white_word_16.png" />
+    <None Include="Resources\vcard.png" />
+    <None Include="Resources\printer_laser_64.png" />
+    <None Include="Resources\folder-magnify.png" />
+    <None Include="Resources\view-choose.png" />
+    <None Include="Resources\view-refresh-4.png" />
+    <None Include="Resources\tools-report-bug.png" />
+    <None Include="Resources\view_16.png" />
+    <None Include="Resources\emblem-important-3.png" />
+    <None Include="Resources\document_16.png" />
+    <None Include="Resources\excelHelp.png" />
+    <None Include="Resources\emblem-notice.png" />
+    <None Include="Resources\edit-remove-3.png" />
+    <None Include="Resources\checkbox-2.png" />
+    <None Include="Resources\agenda.png" />
+    <None Include="Resources\document-save-5.png" />
+    <None Include="Resources\edit-clear-2.png" />
+    <None Include="Resources\edit-clear-locationbar-ltr.png" />
+    <None Include="Resources\edit-clear-21.png" />
+    <None Include="Resources\dialog-apply.png" />
+    <None Include="Resources\emblem-documents.png" />
+    <None Include="Resources\edit-add-2.png" />
+    <None Include="Resources\document-save-5_16.png" />
+    <None Include="Resources\application-exit-3.png" />
+    <None Include="Resources\applications-internet-5.png" />
+    <None Include="Resources\emblem-special.png" />
+    <None Include="Resources\color-swatch.png" />
+    <None Include="Resources\contrast-low.png" />
+    <None Include="Resources\go-previous-5.png" />
+    <None Include="Resources\go-next-5.png" />
+    <None Include="Resources\dialog-ok-3.png" />
+    <None Include="Resources\dialog-cancel-3.png" />
+    <None Include="Resources\go-previous-9.png" />
+    <None Include="Resources\document-save-5_32.png" />
+    <None Include="Resources\distribute-vertical-equal.png" />
+    <None Include="Resources\brick-add.png" />
+    <None Include="Resources\brick-delete.png" />
+    <None Include="Resources\calendar-add.png" />
+    <None Include="Resources\calendar-delete.png" />
+    <None Include="Resources\calendar-edit.png" />
+    <None Include="Resources\edit-table-cell.png" />
+    <None Include="Resources\applications-system-2.png" />
+    <None Include="Resources\arrow-left-3.png" />
+    <None Include="Resources\emblem-notice_256.png" />
+    <None Include="Resources\emblem-new_256.png" />
+    <None Include="Resources\emblem-important-2_256.png" />
+    <None Include="Resources\application-exit-3_256.png" />
+    <None Include="Resources\document-decrypt-3.png" />
+    <None Include="Resources\emblem-package.png" />
+    <None Include="Resources\flag-es.png" />
+    <None Include="Resources\application-x-kexiproject-sqlite3.png" />
+    <None Include="Resources\application-vnd.oasis.opendocument.spreadsheet.png" />
+    <None Include="Resources\application-java-archive.png" />
+    <None Include="Resources\contact-new-2.png" />
+    <None Include="Resources\configure-toolbars.png" />
+    <None Include="Resources\application-x-theme.png" />
+    <None Include="Resources\applications-development-3.png" />
+    <None Include="Resources\applications-engineering-2.png" />
+    <None Include="Resources\color-picker-grey.png" />
+    <None Include="Resources\emblem-mail.png" />
+    <None Include="Resources\emblem-mail_16.png" />
+    <None Include="Resources\help-2.png" />
+    <None Include="Resources\edit-paste-9.png" />
+    <None Include="Resources\arrow-up-16.png" />
+    <None Include="Resources\arrow-down-16.png" />
+    <None Include="Resources\emblem-package-2.png" />
+    <None Include="Resources\download-later.png" />
+    <None Include="Resources\document-open-recent.png" />
+    <None Include="Resources\ark-4.png" />
+    <None Include="Resources\edit-group.png" />
+    <None Include="Resources\car.png" />
+    <None Include="Resources\document_quick_restart.png" />
+    <None Include="Resources\appointmentmissed.png" />
+    <None Include="Resources\appointmentmissed16.png" />
+    <None Include="Resources\accessories_dictionary.png" />
+    <None Include="Resources\document_print_16.png" />
+    <None Include="Resources\appointment_256.png" />
+    <None Include="Resources\document_open_256.png" />
+    <None Include="Resources\application-exit-4.png" />
+    <Content Include="Resources\important.png" />
+    <None Include="Resources\sp2b.jpg" />
+    <None Include="Resources\imprimir_16.png" />
+    <None Include="Resources\no_imagen_64.png" />
+    <None Include="Resources\office-chart-area.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\pedidoColor.bmp" />
+    <None Include="Resources\package-broken2.png" />
+    <None Include="Resources\package-installed-updated.png" />
+    <None Include="Resources\package-add.png" />
+    <None Include="Resources\package-broken.png" />
+    <None Include="Resources\textfield-delete.png" />
+    <None Include="Resources\package-green.png" />
+    <None Include="Resources\package-halfgreen.png" />
+    <None Include="Resources\window-duplicate.png" />
+    <None Include="Resources\view-choose-3.png" />
+    <None Include="Resources\system-help-3.png" />
+    <None Include="Resources\search-3.png" />
+    <None Include="Resources\LogoLA.ico" />
+    <None Include="Resources\user-suit.png" />
+    <None Include="Resources\network-transmit.png" />
+    <None Include="Resources\LogoLaIcon.ico" />
+    <None Include="Resources\LaIconPng.png" />
+    <None Include="Resources\LaIconPng.ico" />
+    <None Include="Resources\LogoBandejaLa.png" />
+    <None Include="Resources\LogoBandejaLa2.png" />
+    <None Include="Resources\LogoBandejaLa2.ico" />
+    <None Include="Resources\note-go.png" />
+    <None Include="Resources\mail-forward-4_16.png" />
+    <None Include="Resources\mail-forward-4_22.png" />
+    <None Include="Resources\mail-send-3_32.png" />
+    <None Include="Resources\view-calendar-day-2_256.png" />
+    <None Include="Resources\view-calendar-week256.png" />
+    <None Include="Resources\view-calendar-workweek256.png" />
+    <None Include="Resources\winmerge.png" />
+    <None Include="Resources\view-media-artist.png" />
+    <None Include="Resources\view-process-own.png" />
+    <None Include="Resources\view-refresh-2.png" />
+    <None Include="Resources\rhythmbox.png" />
+    <None Include="Resources\text-x-generic.png" />
+    <None Include="Resources\x-office-spreadsheet-2.png" />
+    <None Include="Resources\qtconfig.png" />
+    <None Include="Resources\preferences-other-2.png" />
+    <None Include="Resources\rhythmbox1.png" />
+    <None Include="Bases\ZLibrerias\referencias\DgvFilterPopup.dll" />
+    <None Include="Bases\ZLibrerias\referencias\Microsoft.Office.Interop.Excel.dll" />
+    <None Include="Bases\ZLibrerias\referencias\Microsoft.Office.Interop.Excel.xml" />
+    <None Include="Bases\ZLibrerias\referencias\Microsoft.Office.Interop.Word.dll" />
+    <None Include="Bases\ZLibrerias\referencias\Microsoft.Office.Interop.Word.xml" />
+    <None Include="Bases\ZLibrerias\referencias\office.dll" />
+    <None Include="Bases\ZLibrerias\referencias\office.xml" />
+    <None Include="app.config" />
+    <None Include="My Project\DataSources\ControlesLotesGranel.datasource" />
+    <Content Include="Resources\LA  sin texto 48 x 48.ico" />
+    <None Include="Resources\insert-horizontal-rule.png" />
+    <Content Include="Resources\Logo JR Sabater.gif" />
+    <Content Include="Resources\Logo LA sin texto.jpg" />
+    <None Include="Bases\ZLibrerias\DgvFilterPopup.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{3924545A-F8E2-475A-B1A4-05175BC41E50}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ReportViewer.11.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Report Viewer 2012 Runtime</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Vbe.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="office">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
