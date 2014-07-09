@@ -38,5 +38,5 @@
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: System.Reflection.AssemblyVersion("2014.06.01.1")> 
-<Assembly: System.Reflection.AssemblyFileVersion("2014.06.01.1")> 
+<Assembly: System.Reflection.AssemblyVersion("2014.07.01.1")> 
+<Assembly: System.Reflection.AssemblyFileVersion("2014.07.01.1")> 
