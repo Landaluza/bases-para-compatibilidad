@@ -43,8 +43,8 @@ Public Class DataBase
         bd = "LA"
 
         If server = SERVIDOR Then
-            'Name = "192.168.1.101\SQLEXPRESS,1608"
-            Name = "192.168.1.200"
+            Name = "192.168.1.101\SQLEXPRESS,1608"
+            'Name = "192.168.1.200"
             Config.connectionString = "User ID=ssa;Password=Trucha0122;Trusted_Connection=False;"
         Else
 
