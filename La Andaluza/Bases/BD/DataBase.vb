@@ -6,6 +6,7 @@ Public Class DataBase
     Private Cnn As System.Data.SqlClient.SqlConnection
     Private transaction As System.Data.SqlClient.SqlTransaction
     Private time_out As Integer
+    Private command As System.Data.SqlClient.SqlCommand
 
     Public Property TimeOut As Integer
         Get
@@ -199,6 +200,33 @@ Public Class DataBase
             If Me.transaction Is Nothing Then
                 If BD.transaction Is Nothing Then Me.Desconectar()
             End If
+        End Try
+    End Function
+
+    Public Sub PrepararConsulta(ByVal consulta As String)
+        Me.Conectar()
+        command = Comando(consulta)
+    End Sub
+
+    Public Sub AñadirParametroConsulta(ByVal nombre As String, ByVal valor As Object)
+        command.Parameters.AddWithValue(nombre, valor)
+    End Sub
+
+    Public Function Consultar() As DataTable
+        Dim dtsTabla As New DataTable
+        Dim dtsTemp As New DataSet
+        Dim Ad As System.Data.SqlClient.SqlDataAdapter
+
+        Try
+            Ad = New System.Data.SqlClient.SqlDataAdapter(command)
+            Ad.Fill(dtsTemp, "NuevaTabla")
+            dtsTabla = dtsTemp.Tables(0)
+            'cmd.Dispose()
+            Return dtsTabla
+        Catch ex As Exception
+            Return Nothing
+        Finally
+            Me.Desconectar()
         End Try
     End Function
 End Class
