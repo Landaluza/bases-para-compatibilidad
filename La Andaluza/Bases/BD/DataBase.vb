@@ -45,7 +45,7 @@ Public Class DataBase
 
         If server = SERVIDOR Then
             'Name = "192.168.1.101\SQLEXPRESS,1608"
-            Name = "192.168.1.200"
+            Name = "192.168.10.200"
             'Name = "SERVIDOR"
             Config.connectionString = "User ID=ssa;Password=Trucha0122;Trusted_Connection=False;"
         Else
@@ -58,7 +58,7 @@ Public Class DataBase
                     Config.connectionString = "User ID=mamvaio\mam;Trusted_Connection=True;"
                     Name = "MAMVAIO\SQLEXPRESS"
                 Else
-                    Name = "192.168.1.124\SQLEXPRESS"
+                    Name = "192.168.10.124\SQLEXPRESS"
                     Config.connectionString = "User ID=ssa;Password=Trucha0122;Trusted_Connection=False;"
                 End If
             End If
