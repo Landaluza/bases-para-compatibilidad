@@ -44,8 +44,8 @@ Partial Class FrmAheredarOld
         Me.butSalir = New System.Windows.Forms.ToolStripButton()
         Me.bdnGeneral = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.GeneralBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.butRefrescar = New System.Windows.Forms.ToolStripButton()
         Me.Separator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.butRefrescar = New System.Windows.Forms.ToolStripButton()
         Me.butWord = New System.Windows.Forms.ToolStripButton()
         Me.butExcel = New System.Windows.Forms.ToolStripButton()
         Me.dgvGeneral = New System.Windows.Forms.DataGridView()
@@ -172,17 +172,17 @@ Partial Class FrmAheredarOld
         Me.bdnGeneral.Name = "bdnGeneral"
         Me.bdnGeneral.PositionItem = Me.BindingNavigatorPositionItem
         '
+        'Separator1
+        '
+        Me.Separator1.Name = "Separator1"
+        resources.ApplyResources(Me.Separator1, "Separator1")
+        '
         'butRefrescar
         '
         Me.butRefrescar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.butRefrescar.Image = Global.BasesParaCompatibilidad.My.Resources.Resources.view_refresh_4
         resources.ApplyResources(Me.butRefrescar, "butRefrescar")
         Me.butRefrescar.Name = "butRefrescar"
-        '
-        'Separator1
-        '
-        Me.Separator1.Name = "Separator1"
-        resources.ApplyResources(Me.Separator1, "Separator1")
         '
         'butWord
         '

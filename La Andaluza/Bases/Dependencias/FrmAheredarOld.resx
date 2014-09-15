@@ -410,7 +410,7 @@
     <value>857, 461</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>362, 401</value>
+    <value>50, 50</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -508,17 +508,17 @@
   <data name="&gt;&gt;GeneralBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;butRefrescar.Name" xml:space="preserve">
-    <value>butRefrescar</value>
-  </data>
-  <data name="&gt;&gt;butRefrescar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;Separator1.Name" xml:space="preserve">
     <value>Separator1</value>
   </data>
   <data name="&gt;&gt;Separator1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;butRefrescar.Name" xml:space="preserve">
+    <value>butRefrescar</value>
+  </data>
+  <data name="&gt;&gt;butRefrescar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;butWord.Name" xml:space="preserve">
     <value>butWord</value>
