@@ -154,7 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bases\Clases\FechaQs.vb" />
-    <Compile Include="Bases\Conf\Components\DataGridViewPrintDocument.vb">
+    <Compile Include="Bases\Components\DataGridViewPrintDocument.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Bases\Conf\Config.vb" />
@@ -230,25 +230,25 @@
     <Compile Include="Bases\Clases\Pantalla.vb" />
     <Compile Include="Bases\Clases\Consola.vb" />
     <Compile Include="Bases\BD\BD.vb" />
-    <Compile Include="Bases\Conf\Components\clsCuadroDeTexto.vb" />
-    <Compile Include="Bases\Conf\Components\CuadroDeTextoMuestra.vb">
+    <Compile Include="Bases\Components\clsCuadroDeTexto.vb" />
+    <Compile Include="Bases\Components\CuadroDeTextoMuestra.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Bases\Conf\Components\ctlCuadroDeTexto.vb" />
-    <Compile Include="Bases\Conf\Components\CuadroDeTexto.vb">
+    <Compile Include="Bases\Components\ctlCuadroDeTexto.vb" />
+    <Compile Include="Bases\Components\CuadroDeTexto.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Bases\Conf\Components\CuadroTextoNumerosNegativos.Designer.vb">
+    <Compile Include="Bases\Components\CuadroTextoNumerosNegativos.Designer.vb">
       <DependentUpon>CuadroTextoNumerosNegativos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Bases\Conf\Components\CuadroTextoNumerosNegativos.vb">
+    <Compile Include="Bases\Components\CuadroTextoNumerosNegativos.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Bases\Clases\Encriptacion.vb" />
-    <Compile Include="Bases\Conf\Components\MessageDialogue.Designer.vb">
+    <Compile Include="Bases\Components\MessageDialogue.Designer.vb">
       <DependentUpon>MessageDialogue.vb</DependentUpon>
     </Compile>
-    <Compile Include="Bases\Conf\Components\MessageDialogue.vb">
+    <Compile Include="Bases\Components\MessageDialogue.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -289,7 +289,7 @@
     <EmbeddedResource Include="Bases\Form\DetailedSimpleForm.resx">
       <DependentUpon>DetailedSimpleForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bases\Conf\Components\MessageDialogue.resx">
+    <EmbeddedResource Include="Bases\Components\MessageDialogue.resx">
       <DependentUpon>MessageDialogue.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
