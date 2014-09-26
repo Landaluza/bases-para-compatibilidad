@@ -33,6 +33,8 @@ Partial Class glassPanel
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "glassPanel"
         Me.Opacity = 0.6R
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Text = "glassPanel"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
