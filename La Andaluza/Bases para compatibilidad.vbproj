@@ -154,6 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bases\Clases\FechaQs.vb" />
+    <Compile Include="Bases\Clases\glassPanel.Designer.vb">
+      <DependentUpon>glassPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bases\Clases\glassPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bases\Components\DataGridViewPrintDocument.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <Compile Include="Bases\Clases\Imagen.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bases\Clases\glassPanel.resx">
+      <DependentUpon>glassPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bases\Form\Dialogos\frmEspera.resx">
       <DependentUpon>frmEspera.vb</DependentUpon>
     </EmbeddedResource>

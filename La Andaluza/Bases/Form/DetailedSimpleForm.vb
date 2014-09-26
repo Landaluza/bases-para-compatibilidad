@@ -238,18 +238,9 @@ Public Class DetailedSimpleForm
         c2.Top = (c1.Height - c2.Height) / 2
     End Sub
 
-    Public Shared Sub centerIn(ByRef c2 As Control, ByRef c1 As Control)
-        c2.Left = (c1.Width - c2.Width) / 2
-        c2.Top = (c1.Height - c2.Height) / 2
-    End Sub
 
-    Public Shared Sub centerHorizontalyIn(ByRef c2 As Control, ByRef c1 As Control)
-        c2.Left = (c1.Width - c2.Width) / 2
-    End Sub
 
-    Public Shared Sub centerVerticalyIn(ByRef c2 As Control, ByRef c1 As Control)
-        c2.Top = (c1.Height - c2.Height) / 2
-    End Sub
+
 
     Private Sub DetailedSimpleForm_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If evitarCerrarSinGuardar Then
