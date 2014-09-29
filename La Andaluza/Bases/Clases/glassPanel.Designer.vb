@@ -30,7 +30,8 @@ Partial Class glassPanel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
         Me.ClientSize = New System.Drawing.Size(1115, 513)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.ControlBox = False
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "glassPanel"
         Me.Opacity = 0.6R
         Me.ShowIcon = False
