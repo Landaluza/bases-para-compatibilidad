@@ -203,12 +203,13 @@
         c2.Top = Convert.ToInt32((c1.Height - c2.Height) / 2)
     End Sub
     Shared Function mostrarDialogo(frm As Form) As DialogResult
-        Dim glass As New glassPanel
-        glass.Text = frm.Text
-        glass.Show()
-        glass.FormBorderStyle = FormBorderStyle.None
+        'Dim glass As New glassPanel
+        'glass.Text = frm.Text
+        'glass.Show()
+        'glass.FormBorderStyle = FormBorderStyle.None
         Dim result As DialogResult = frm.ShowDialog
-        glass.Close()
+        ' glass.Close()
+        ' AddHandler frm.LocationChanged, AddressOf glass.recolocar
         Return result
     End Function
 End Class
