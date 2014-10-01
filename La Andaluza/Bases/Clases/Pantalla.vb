@@ -48,13 +48,12 @@
         If modal Then
             Dim glass As New glassPanel(form)
             glass.Text = form.Text
-            glass.recolocar(Nothing, Nothing)
+
             AddHandler form.ResizeEnd, AddressOf glass.recolocar
             AddHandler form.ResizeBegin, AddressOf glass.ocultar
+            AddHandler form.Shown, AddressOf glass.recolocar
 
-            Dim result As DialogResult = form.ShowDialog
-            glass.Close()
-            Return result
+            Return glass.ShowDialog
         Else
             form.Show()
             Return DialogResult.OK

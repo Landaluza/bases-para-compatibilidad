@@ -38,7 +38,6 @@ Partial Class glassPanel
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "glassPanel"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
