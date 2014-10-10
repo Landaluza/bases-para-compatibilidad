@@ -349,7 +349,9 @@ Public Class gridsimpleform
     End Sub
 
     Protected Overridable Sub cargar_datos()
-        dataSource = dtb.Consultar(Me.sp.DataGridViewStoredProcedure, True)
+        dtb.PrepararConsulta(Me.sp.DataGridViewStoredProcedure)
+        dataSource = dtb.Consultar
+        'dataSource = dtb.Consultar(Me.sp.DataGridViewStoredProcedure, True)
     End Sub
 
     Protected Overridable Sub BindDataSource()

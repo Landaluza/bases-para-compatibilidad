@@ -269,12 +269,16 @@ Public MustInherit Class StoredProcedure
         End If
     End Function
 
-    Public Function select_Dgv() As DataTable       
-        Return dtb.Consultar(Me.selectDgvAllProcedureName)
+    Public Function select_Dgv() As DataTable
+        dtb.PrepararConsulta(Me.selectDgvAllProcedureName)
+        Return dtb.Consultar
+        'Return dtb.Consultar(Me.selectDgvAllProcedureName, True)
     End Function
 
-    Public Function select_DgvBy(ByVal searchTerm As String) As DataTable       
-        Return dtb.Consultar(Me.selectDgvByProcedureName & " '" & searchTerm & "'")
+    Public Function select_DgvBy(ByVal searchTerm As String) As DataTable
+        dtb.PrepararConsulta(Me.selectDgvByProcedureName & " '" & searchTerm & "'")
+        Return dtb.Consultar
+        'Return dtb.Consultar(Me.selectDgvByProcedureName & " '" & searchTerm & "'", True)
     End Function
 
     Public MustOverride Function Delete(ByVal id As Integer, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean

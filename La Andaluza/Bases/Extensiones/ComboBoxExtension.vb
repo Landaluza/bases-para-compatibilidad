@@ -40,7 +40,9 @@
         Try
             Dim tb As New DataTable
             Dim dtb As New DataBase(Config.Server)
-            tb = dtb.Consultar(sp)
+            dtb.PrepararConsulta(sp)
+            tb = dtb.Consultar
+            'tb = dtb.Consultar(sp, True)
 
             If Not tb Is Nothing Then
                 If tb.Rows.Count = 0 Then
@@ -83,7 +85,9 @@
 
         Try
             Dim tb As New DataTable
-            tb = dtb.Consultar(sp, True)
+            dtb.PrepararConsulta(sp)
+            tb = dtb.Consultar()
+            'tb = dtb.Consultar(sp, True)
 
             If Not tb Is Nothing Then
                 If tb.Rows.Count = 0 Then

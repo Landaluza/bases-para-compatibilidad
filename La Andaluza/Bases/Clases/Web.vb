@@ -29,6 +29,9 @@ Public Class Web
     End Sub
 
     Public Function recuperar_id_tablet(ByVal usuarioid As Integer, ByRef dtb As DataBase) As String
-        Return dtb.Consultar("select gcm_regid from gcm_Users where id_usuario= " & usuarioid, False).Rows(0).Item(0).ToString
+        dtb.PrepararConsulta("select gcm_regid from gcm_Users where id_usuario= @id")
+        dtb.AñadirParametroConsulta("@id", usuarioid)
+
+        Return dtb.Consultar().Rows(0).Item(0).ToString
     End Function
 End Class

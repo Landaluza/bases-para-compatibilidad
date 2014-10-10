@@ -132,44 +132,44 @@ Public Class DataBase
         Me.Desconectar()
     End Sub
 
-    Public Function Consultar(ByVal Cadena As String, Optional procedure As Boolean = True) As DataTable
-        Dim dtsTabla As New DataTable
+    'Public Function Consultar(ByVal Cadena As String, procedure As Boolean) As DataTable
+    '    Dim dtsTabla As New DataTable
 
-        If BD.transaction Is Nothing Then
-            Me.Conectar()
-        Else
-            Me.Cnn = BD.Cnx
-            Me.transaction = BD.transaction
-        End If
+    '    If BD.transaction Is Nothing Then
+    '        Me.Conectar()
+    '    Else
+    '        Me.Cnn = BD.Cnx
+    '        Me.transaction = BD.transaction
+    '    End If
 
-        Dim dtsTemp As New DataSet
-        Dim cmd As System.Data.SqlClient.SqlCommand '= Comando(Cadena)
+    '    Dim dtsTemp As New DataSet
+    '    Dim cmd As System.Data.SqlClient.SqlCommand '= Comando(Cadena)
 
-        Try
-            If procedure Then
-                If Not Cadena.Contains("exec ") Then
-                    Cadena = "exec " & Cadena
-                End If
+    '    Try
+    '        If procedure Then
+    '            If Not Cadena.Contains("exec ") Then
+    '                Cadena = "exec " & Cadena
+    '            End If
 
-                cmd = Comando(Cadena)
-            Else
-                cmd = Comando(Cadena)
-            End If
+    '            cmd = Comando(Cadena)
+    '        Else
+    '            cmd = Comando(Cadena)
+    '        End If
 
-            'If procedure Then cmd.CommandType = CommandType.StoredProcedure
+    '        'If procedure Then cmd.CommandType = CommandType.StoredProcedure
 
-            Dim Ad As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(cmd)
-            Ad.Fill(dtsTemp, "NuevaTabla")
-            dtsTabla = dtsTemp.Tables(0)
-            'cmd.Dispose()
-            Return dtsTabla
-        Catch ex As Exception
-            Return Nothing
-        Finally
+    '        Dim Ad As System.Data.SqlClient.SqlDataAdapter = New System.Data.SqlClient.SqlDataAdapter(cmd)
+    '        Ad.Fill(dtsTemp, "NuevaTabla")
+    '        dtsTabla = dtsTemp.Tables(0)
+    '        'cmd.Dispose()
+    '        Return dtsTabla
+    '    Catch ex As Exception
+    '        Return Nothing
+    '    Finally
 
-            If Me.transaction Is Nothing Then Me.Desconectar()
-        End Try
-    End Function
+    '        If Me.transaction Is Nothing Then Me.Desconectar()
+    '    End Try
+    'End Function
 
     Public Function ConsultaAlteraciones(ByVal strrealizarConsulta As String) As Boolean
         If Me.transaction Is Nothing Then
@@ -229,5 +229,24 @@ Public Class DataBase
         Finally
             Me.Desconectar()
         End Try
+    End Function
+
+    Public Function Consultar(alteraciones As Boolean) As Boolean
+        Try
+            command.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Return False
+        Finally
+            command.Dispose()
+            Me.Desconectar()
+        End Try
+    End Function
+
+
+    'deprecated
+    Public Function Consultar(ByVal Cadena As String, procedure As Boolean) As DataTable
+        PrepararConsulta(Cadena)
+        Return Me.Consultar()
     End Function
 End Class

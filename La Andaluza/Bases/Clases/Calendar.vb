@@ -8,7 +8,9 @@
         dtb.TimeOut = 40
         Dim dt As DataTable
         Try
-            dt = dtb.Consultar("Update _TestDate set Date='2009/20/1 0:0:0' where Id=1", False)
+            dtb.PrepararConsulta("Update _TestDate set Date='2009/20/1 0:0:0' where Id=1")
+            dt = dtb.Consultar()
+            'dt = dtb.Consultar("Update _TestDate set Date='2009/20/1 0:0:0' where Id=1", False)
             'dt = dtb.Consultar("Update _TestDate set Date='2009/20/1' where Id=1", False)
             If Not dt Is Nothing Then
                 If CType(dt.Rows(0).Item(0), Integer) = 1 Then

@@ -138,10 +138,10 @@ Public Module BD
         Return realizarConsultaAlteraciones(Linea)
     End Function
 
-    Public Function ConsultaEliminar(ByVal tabla As String, ByVal restriccion As String) As Integer
-        Linea = "delete from " + tabla + " where " + restriccion
-        Return realizarConsultaAlteraciones(Linea)
-    End Function
+    'Public Function ConsultaEliminar(ByVal tabla As String, ByVal restriccion As String) As Integer
+    '    Linea = "delete from " + tabla + " where " + restriccion
+    '    Return realizarConsultaAlteraciones(Linea)
+    'End Function
 
     Public Function ConsultaVer(ByVal datos As String, ByVal tabla As String, ByVal restriccion As String, ByVal orderBy As String) As DataTable
         If restriccion.Length = 0 Then
