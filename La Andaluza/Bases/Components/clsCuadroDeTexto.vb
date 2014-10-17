@@ -66,7 +66,8 @@ Public Class clsCuadroDeTexto
 
     Function EsMio() As Boolean
         Try
-            Return Convert.ToInt32(BD.ConsultaVer("count(*)", Tabla, Campo & " = '" & CampoValor & "' and " & CampoID & " = " & Convert.ToString(ID)).Rows(0).Item(0)) > 0
+            Dim dtb As New DataBase(Config.Server, BD.Cnx, BD.transaction)
+            Return Convert.ToInt32(dtb.Consultar("select count(*) from " & Tabla & " where " & Campo & " = '" & CampoValor & "' and " & CampoID & " = " & Convert.ToString(ID), True).Rows(0).Item(0)) > 0
         Catch ex As Exception
             Return False
         End Try
@@ -74,7 +75,8 @@ Public Class clsCuadroDeTexto
 
     Function Validar() As Boolean
         Try
-            Return Convert.ToInt32(BD.ConsultaVer("count(*) as cuenta", Tabla, Campo & " = '" & CampoValor & "'").Rows(0).Item(0)) > 0
+            Dim dtb As New DataBase(Config.Server, BD.Cnx, BD.transaction)
+            Return Convert.ToInt32(dtb.Consultar("select count(*) as cuenta from " & Tabla & " where " & Campo & " = '" & CampoValor & "'", True).Rows(0).Item(0)) > 0
         Catch ex As Exception
             Return False
         End Try

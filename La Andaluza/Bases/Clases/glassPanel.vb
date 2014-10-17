@@ -15,6 +15,7 @@
         Me.Visible = True
         Me.WindowState = FormWindowState.Maximized
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        padre.Focus()
     End Sub
     Public Sub ocultar(sender As Object, e As EventArgs)
         Me.Visible = False        
@@ -24,6 +25,7 @@
 
     Private Sub glassPanel_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         Dim result As DialogResult = padre.ShowDialog
+        padre.Focus()
         Me.DialogResult = result
     End Sub
 End Class
