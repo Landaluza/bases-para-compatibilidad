@@ -230,7 +230,6 @@
     <Compile Include="Bases\Interfaces\Queriable.vb" />
     <Compile Include="Bases\Interfaces\Savable.vb" />
     <Compile Include="Bases\DataBase\StoredProcedure.vb" />
-    <Compile Include="Bases\Interfaces\wizardable.vb" />
     <Compile Include="Bases\Clases\File.vb" />
     <Compile Include="Bases\Clases\NativeMethods.vb" />
     <Compile Include="Bases\Clases\Pantalla.vb" />
