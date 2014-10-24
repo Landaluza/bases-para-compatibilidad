@@ -7,10 +7,10 @@
 
 
 Public MustInherit Class StoredProcedure
+
     'Private connection As System.Data.SqlClient.SqlConnection
     Private selectProcedureName, insertProcedureName, updateProcedureName, deleteProcedureName, selectDgvAllProcedureName, selectDgvByProcedureName As String
     Private DgvProcedure As String
-    Protected dtb As DataBase
 
     Public Property DataGridViewStoredProcedure As String
         Get
@@ -41,65 +41,24 @@ Public MustInherit Class StoredProcedure
         Me.selectDgvAllProcedureName = selectDgvAllProcedureName
         Me.selectDgvByProcedureName = selectDgvByProcedureName
 
-        dtb = New DataBase(Config.Server)
     End Sub
 
-    Public Sub Select_Record(ByRef dbo As DataBussines, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing)
+    Public Sub Select_Record(ByRef dbo As DataBussines, ByRef dtb As DataBase)
         dbo.searchKey.name = dbo.key.name
         dbo.searchKey.value = dbo.key.value
-        Me.Select_proc(dbo, selectProcedureName, trans)
-        'Dim reader As System.Data.SqlClient.SqlDataReader = Nothing
-        'Dim selectCommand As System.Data.SqlClient.SqlCommand
-
-        'Try
-        '    If trans Is Nothing Then
-        '        dtb.Conectar()            
-        '    End If
-
-        '    selectCommand = dtb.Comando(selectProcedureName)
-        '    selectCommand.CommandType = CommandType.StoredProcedure
-
-        '    If Not trans Is Nothing Then
-        '        selectCommand.Transaction = dtb.Transaccion
-        '    End If
-
-        '    selectCommand.Parameters.AddWithValue(dbo.searchKey.name, dbo.searchKey.value)
-        '    reader = selectCommand.ExecuteReader(CommandBehavior.SingleRow)
-
-        '    If reader.Read Then
-        '        Dim cont As Integer = 1
-
-        '        While cont <= dbo.count
-        '            dbo.item(cont).value = reader(dbo.item(cont).sqlName)
-        '            cont += 1
-        '        End While
-        '    Else
-        '        dbo = Nothing
-        '    End If
-
-        'Catch ex As Exception
-        '    dbo = Nothing
-        'Finally
-        '    If Not reader Is Nothing Then If Not reader.IsClosed Then reader.Close()
-        '    dtb.Desconectar()
-        'End Try
+        Me.Select_proc(dbo, selectProcedureName, dtb)
     End Sub
 
-    Protected Sub Select_proc(ByRef dbo As DataBussines, ByVal proc As String, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing)
+    Protected Sub Select_proc(ByRef dbo As DataBussines, ByVal proc As String, ByRef dtb As DataBase)
         Dim reader As System.Data.SqlClient.SqlDataReader = Nothing
         Dim selectCommand As System.Data.SqlClient.SqlCommand
 
         Try
-            'If trans Is Nothing Then
             dtb.Conectar()
-            'End If
 
             selectCommand = dtb.Comando(proc)
             selectCommand.CommandType = CommandType.StoredProcedure
 
-            If Not trans Is Nothing Then
-                selectCommand.Transaction = dtb.Transaccion
-            End If
 
             selectCommand.Parameters.AddWithValue(dbo.searchKey.name, dbo.searchKey.value)
             reader = selectCommand.ExecuteReader(CommandBehavior.SingleRow)
@@ -123,22 +82,15 @@ Public MustInherit Class StoredProcedure
         End Try
     End Sub
 
-    Protected Function InsertProcedure(ByRef dbo As DataBussines, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
+    Protected Function InsertProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
         Try
-            If trans Is Nothing Then
-                If BD.transaction Is Nothing Then Conectar()
-            End If
-            Dim connection As System.Data.SqlClient.SqlConnection = BD.Cnx
-            Dim insertCommand As New System.Data.SqlClient.SqlCommand(insertProcedureName, connection)
+            dtb.Conectar()
+
+
+            Dim insertCommand As System.Data.SqlClient.SqlCommand = dtb.Comando(insertProcedureName)
             insertCommand.CommandType = CommandType.StoredProcedure
 
-            If Not trans Is Nothing Then
-                insertCommand.Transaction = trans
-            Else
-                If Not BD.transaction Is Nothing Then
-                    insertCommand.Transaction = BD.transaction
-                End If
-            End If
+
 
             Dim obj As DataBussinesParameter
             Dim cont As Integer = 2 'saltamos el id
@@ -174,27 +126,17 @@ Public MustInherit Class StoredProcedure
             Return False
             'Throw
         Finally
-            If trans Is Nothing Then
-                If BD.transaction Is Nothing Then Cerrar()
-            End If
+            dtb.Desconectar()
         End Try
     End Function
 
-    Protected Function UpdateProcedure(ByRef dbo As DataBussines, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
+    Protected Function UpdateProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
         Try
-            If trans Is Nothing Then
-                If BD.transaction Is Nothing Then Conectar()
-            End If
-            Dim connection As System.Data.SqlClient.SqlConnection = BD.Cnx
-            Dim updateCommand As New System.Data.SqlClient.SqlCommand(updateProcedureName, connection)
+            dtb.Conectar()
+
+            Dim updateCommand As System.Data.SqlClient.SqlCommand = dtb.Comando(updateProcedureName)
             updateCommand.CommandType = CommandType.StoredProcedure
-            If Not trans Is Nothing Then
-                updateCommand.Transaction = trans
-            Else
-                If Not BD.transaction Is Nothing Then
-                    updateCommand.Transaction = BD.transaction
-                End If
-            End If
+
 
             Dim obj As DataBussinesParameter
             Dim cont As Integer = 1
@@ -230,13 +172,11 @@ Public MustInherit Class StoredProcedure
             Return False
             'Throw
         Finally
-            If trans Is Nothing Then
-                If BD.transaction Is Nothing Then Cerrar()
-            End If
+            dtb.Desconectar()
         End Try
     End Function
 
-    Protected Function DeleteProcedure(ByRef dbo As DataBussines, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
+    Protected Function DeleteProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
         Dim deleteCommand As System.Data.SqlClient.SqlCommand
 
         Try
@@ -245,9 +185,6 @@ Public MustInherit Class StoredProcedure
             deleteCommand = dtb.Comando(deleteProcedureName)
             deleteCommand.CommandType = CommandType.StoredProcedure
 
-            If Not trans Is Nothing Then
-                deleteCommand.Transaction = dtb.Transaccion
-            End If
 
             deleteCommand.Parameters.AddWithValue(dbo.searchKey.name, dbo.searchKey.value)
 
@@ -261,26 +198,24 @@ Public MustInherit Class StoredProcedure
         End Try
     End Function
 
-    Public Overridable Function Grabar(ByRef dbo As DataBussines, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
+    Public Overridable Function Grabar(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
         If IsNothing(dbo.key.value) Or dbo.key.value = 0 Then
-            Return InsertProcedure(dbo, trans)
+            Return InsertProcedure(dbo, dtb)
         Else
-            Return UpdateProcedure(dbo, trans)
+            Return UpdateProcedure(dbo, dtb)
         End If
     End Function
 
-    Public Function select_Dgv() As DataTable
+    Public Function select_Dgv(ByRef dtb As DataBase) As DataTable
         dtb.PrepararConsulta(Me.selectDgvAllProcedureName)
         Return dtb.Consultar
-        'Return dtb.Consultar(Me.selectDgvAllProcedureName, True)
     End Function
 
-    Public Function select_DgvBy(ByVal searchTerm As String) As DataTable
+    Public Function select_DgvBy(ByVal searchTerm As String, ByRef dtb As DataBase) As DataTable
         dtb.PrepararConsulta(Me.selectDgvByProcedureName & " '" & searchTerm & "'")
         Return dtb.Consultar
-        'Return dtb.Consultar(Me.selectDgvByProcedureName & " '" & searchTerm & "'", True)
     End Function
 
-    Public MustOverride Function Delete(ByVal id As Integer, Optional ByRef trans As System.Data.SqlClient.SqlTransaction = Nothing) As Boolean
+    Public MustOverride Function Delete(ByVal id As Integer, ByRef dtb As DataBase) As Boolean
 
 End Class

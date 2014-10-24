@@ -71,36 +71,28 @@ Public Class DataBase
 
     End Sub
 
-    Public Sub New(ByVal source As Integer)
+    Public Sub New()
         If Config.connectionString = String.Empty Then
-            DataBase.buildConnectionString(source)
+            DataBase.buildConnectionString(Config.Server)
         End If
 
         Me.time_out = DEFAULT_TIMEOUT
     End Sub
 
-    Public Sub New(ByVal source As Integer, ByRef Cnn As System.Data.SqlClient.SqlConnection, ByRef trans As System.Data.SqlClient.SqlTransaction)
-        Me.New(source)
+    'Public Sub New(ByVal source As Integer, ByRef Cnn As System.Data.SqlClient.SqlConnection, ByRef trans As System.Data.SqlClient.SqlTransaction)
+    '    Me.New(source)
 
-        Me.Cnn = Cnn
-        Me.transaction = trans
-        Me.time_out = DEFAULT_TIMEOUT
-    End Sub
+    '    Me.Cnn = Cnn
+    '    Me.transaction = trans
+    '    Me.time_out = DEFAULT_TIMEOUT
+    'End Sub
 
     Public Sub Conectar()
         If Me.transaction Is Nothing Then
-            If Not BD.transaction Is Nothing Then
-                Me.Cnn = BD.Cnx
-                Me.transaction = BD.transaction
-            Else
-                If Not Me.Cnn Is Nothing Then Me.Desconectar()
-                Me.Cnn = New System.Data.SqlClient.SqlConnection
-                Me.Cnn.ConnectionString = Config.connectionString
-                Me.Cnn.Open()
-            End If
-            'Else
-            '    Me.Cnn = BD.Cnx
-            '    Me.transaction = BD.transaction
+            If Not Me.Cnn Is Nothing Then Me.Desconectar()
+            Me.Cnn = New System.Data.SqlClient.SqlConnection
+            Me.Cnn.ConnectionString = Config.connectionString
+            Me.Cnn.Open()
         End If
     End Sub
 
@@ -173,11 +165,7 @@ Public Class DataBase
 
     Public Function ConsultaAlteraciones(ByVal strrealizarConsulta As String) As Boolean
         If Me.transaction Is Nothing Then
-            If BD.transaction Is Nothing Then
-                Me.Conectar()
-            Else
-                Me.Cnn = BD.Cnx
-            End If
+            Me.Conectar()
         End If
 
         Dim cmd As System.Data.SqlClient.SqlCommand
@@ -185,10 +173,6 @@ Public Class DataBase
 
         If Not Me.transaction Is Nothing Then
             cmd.Transaction = Me.transaction
-        Else
-            If Not BD.transaction Is Nothing Then
-                cmd.Transaction = BD.transaction
-            End If
         End If
 
         Try
@@ -199,7 +183,7 @@ Public Class DataBase
         Finally
             cmd.Dispose()
             If Me.transaction Is Nothing Then
-                If BD.transaction Is Nothing Then Me.Desconectar()
+                Me.Desconectar()
             End If
         End Try
     End Function

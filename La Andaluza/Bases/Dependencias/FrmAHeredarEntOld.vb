@@ -7,10 +7,12 @@ Public Class FrmAHeredarEntOld
     Public Const MODIFICACION As Integer = 2
     Public Const CERRADO As Integer = 3
     Public Const VISION As Integer = 99
+    Protected dtb As DataBase
 
     Public Sub New(ByVal modo_de_apertura As Integer)
         Me.ModoDeApertura = modo_de_apertura
         InitializeComponent()
+        dtb = New DataBase()
     End Sub
 
     Public Sub New(ByVal modo_de_apertura As String)
@@ -24,10 +26,14 @@ Public Class FrmAHeredarEntOld
         End Select
 
         InitializeComponent()
+        dtb = New DataBase()
+
     End Sub
 
     Public Sub New()
         InitializeComponent()
+        dtb = New DataBase()
+
     End Sub
 
     Sub ModificarBindingNavigator()

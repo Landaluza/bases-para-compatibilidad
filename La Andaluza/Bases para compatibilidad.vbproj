@@ -234,7 +234,6 @@
     <Compile Include="Bases\Clases\NativeMethods.vb" />
     <Compile Include="Bases\Clases\Pantalla.vb" />
     <Compile Include="Bases\Clases\Consola.vb" />
-    <Compile Include="Bases\BD\BD.vb" />
     <Compile Include="Bases\Components\clsCuadroDeTexto.vb" />
     <Compile Include="Bases\Components\CuadroDeTextoMuestra.vb">
       <SubType>Component</SubType>

@@ -2,7 +2,7 @@
     Private connection As System.Data.SqlClient.SqlConnection
     Protected selectProcedureName, insertProcedureName, updateProcedureName, deleteProcedureName, selectDgvAllProcedureName, selectDgvByProcedureName As String
     Private DgvProcedure As String
-    Protected dtb As DataBase
+
 
     Public Property DataGridViewStoredProcedure As String
         Get
@@ -36,6 +36,5 @@
         Me.selectDgvAllProcedureName = selectDgvAllProcedureName
         Me.selectDgvByProcedureName = selectDgvByProcedureName
 
-        dtb = New DataBase(Config.Server)
     End Sub
 End Class

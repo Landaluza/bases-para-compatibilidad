@@ -19,23 +19,24 @@ Public Class FrmAheredarOld
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
-
+        dtb = New DataBase()
         Me.sp = Nothing
         Me.m_MaestroID = 0
         mse = New MicrosoftOfficeExporter
         filterManager = New DgvFilterPopup.DgvFilterManager(dgvGeneral)
         LastEntry = True
-        dtb = New DataBase(Config.Server)
+
     End Sub
     Public Sub New(ByRef storedProc As sp, Optional ByVal MaestroID As Integer = 0)
         ' This call is required by the designer.
         InitializeComponent()
+        dtb = New DataBase()
+
         If Not storedProc Is Nothing Then Me.sp = storedProc
         Me.m_MaestroID = MaestroID
         mse = New MicrosoftOfficeExporter
         filterManager = New DgvFilterPopup.DgvFilterManager(dgvGeneral)
         LastEntry = True
-        dtb = New DataBase(Config.Server)
     End Sub
 
 

@@ -12,6 +12,7 @@ Public Class DetailedSimpleForm
     Protected Event beforeShown()
     Protected Event afterShown()
     Public Shadows Event afterSave()
+    Protected dtb As DataBase
 
     Protected evitarCerrarSinGuardar As Boolean
 
@@ -25,6 +26,7 @@ Public Class DetailedSimpleForm
         InitializeComponent()
         Me.ModoDeApertura = INSERCION
         Me.dbo = New DataBussines
+        dtb = New DataBase()
 
         evitarCerrarSinGuardar = False
     End Sub
@@ -40,6 +42,7 @@ Public Class DetailedSimpleForm
         End Select
 
         InitializeComponent()
+        dtb = New DataBase()
 
         evitarCerrarSinGuardar = False
     End Sub
@@ -57,6 +60,7 @@ Public Class DetailedSimpleForm
         Me.dbo = dbo
         Me.sp = sp
         InitializeComponent()
+        dtb = New DataBase()
 
         evitarCerrarSinGuardar = False
     End Sub
@@ -65,6 +69,7 @@ Public Class DetailedSimpleForm
         Me.sp = sp
         Me.dbo = dbo
         InitializeComponent()
+        dtb = New DataBase()
 
         evitarCerrarSinGuardar = False
     End Sub
@@ -130,20 +135,24 @@ Public Class DetailedSimpleForm
         Return False
     End Function
 
-    Public Overridable Sub Guardar(Optional ByRef trans As SqlClient.SqlTransaction = Nothing)
+    Public Overridable Sub Guardar(Optional ByRef dtb As DataBase = Nothing)
+        If Not dtb Is Nothing Then
+            Me.dtb = dtb
+        End If
+
         If Not Me.sp Is Nothing Then
             If Me.getValores Then
                 Try
-                    If sp.Grabar(dbo, trans) Then
+                    If sp.Grabar(dbo, dtb) Then
                         evitarCerrarSinGuardar = False
                         RaiseEvent afterSave()
-                        
+
                         Me.Close()
                     Else
-                        messagebox.show("No se pudo guardar el registro. Asegurese de tener conexion a la red.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        MessageBox.Show("No se pudo guardar el registro. Asegurese de tener conexion a la red.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                 Catch ex As Exception
-                    messagebox.show("No se pudo guardar el registro. Detalles:" & Environment.NewLine & Environment.NewLine, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("No se pudo guardar el registro. Detalles:" & Environment.NewLine & Environment.NewLine, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
         Else

@@ -51,7 +51,7 @@ Public Class gridsimpleform
     Public Sub New()
 
         InitializeComponent()
-
+        dtb = New DataBase()
     End Sub
     Public Sub New(ByRef sp As StoredProcedure, ByVal maestroid As String)
         InitializeComponent()
@@ -68,7 +68,7 @@ Public Class gridsimpleform
 
         filterManager = New DgvFilterManager(dgvGeneral)
         mse = New MicrosoftOfficeExporter
-        dtb = New DataBase(Config.Server)
+        dtb = New DataBase()
         dgvFill()
     End Sub
 
@@ -204,7 +204,7 @@ Public Class gridsimpleform
                 If dgvGeneral.Rows.Count > 0 Then
                     For Each row As DataGridViewRow In dgvGeneral.SelectedRows
                         If Not row.DataGridView Is Nothing Then
-                            If sp.Delete(CType(row.Cells(campoId).Value, Integer)) Then
+                            If sp.Delete(CType(row.Cells(campoId).Value, Integer), dtb) Then
                                 RaiseEvent AfterDelete(CType(dgvGeneral, Control), Me)
                             Else
                                 MessageBox.Show("No se pudo eliminar el registro", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information)
