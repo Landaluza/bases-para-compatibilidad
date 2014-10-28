@@ -339,20 +339,23 @@ Public Class FrmAHeredarEntOld
             '    End If
 
             'End If
+            If Not obj1 Is Nothing Then
+                If TypeName(obj1) = "GroupBox" Then
+                    For Each obj2 In obj1.Controls
+                        If Not obj2 Is Nothing Then
+                            If obj2.Visible = True And obj2.Enabled = True And TypeName(obj1) <> "RadioButton" Then
+                                If TypeName(obj2) = "CuadroDeTexto" Then
+                                    obj2.Focus()
 
-            If TypeName(obj1) = "GroupBox" Then
-                For Each obj2 In obj1.Controls
-                    If obj2.Visible = True And obj2.Enabled = True And TypeName(obj1) <> "RadioButton" Then
-                        If TypeName(obj2) = "CuadroDeTexto" Then
-                            obj2.Focus()
-
-                            If Not obj2.Focused Then
-                                ParaGuardar = False
-                                Return
+                                    If Not obj2.Focused Then
+                                        ParaGuardar = False
+                                        Return
+                                    End If
+                                End If
                             End If
                         End If
-                    End If
-                Next
+                    Next
+                End If
             End If
         Next
 
