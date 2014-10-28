@@ -143,7 +143,7 @@ Public Class DetailedSimpleForm
         If Not Me.sp Is Nothing Then
             If Me.getValores Then
                 Try
-                    If sp.Grabar(dbo, dtb) Then
+                    If sp.Grabar(dbo, Me.dtb) Then
                         evitarCerrarSinGuardar = False
                         RaiseEvent afterSave()
 
