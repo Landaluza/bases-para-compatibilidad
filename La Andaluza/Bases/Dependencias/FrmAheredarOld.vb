@@ -12,14 +12,12 @@ Public Class FrmAheredarOld
     Protected mse As MicrosoftOfficeExporter
     Protected filterManager As DgvFilterPopup.DgvFilterManager
     Protected dataSource As DataTable
-    Protected dtb As DataBase
     Protected LastEntry As Boolean
 
     Public Sub New()
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
-        dtb = New DataBase()
         Me.sp = Nothing
         Me.m_MaestroID = 0
         mse = New MicrosoftOfficeExporter
@@ -30,7 +28,6 @@ Public Class FrmAheredarOld
     Public Sub New(ByRef storedProc As sp, Optional ByVal MaestroID As Integer = 0)
         ' This call is required by the designer.
         InitializeComponent()
-        dtb = New DataBase()
 
         If Not storedProc Is Nothing Then Me.sp = storedProc
         Me.m_MaestroID = MaestroID
@@ -38,8 +35,6 @@ Public Class FrmAheredarOld
         filterManager = New DgvFilterPopup.DgvFilterManager(dgvGeneral)
         LastEntry = True
     End Sub
-
-
 
     Public Sub BindingNavigatorActualizar()
         If dgvGeneral.RowCount <= 0 Then
@@ -325,6 +320,5 @@ Public Class FrmAheredarOld
         If Me.BackgroundWorker1.IsBusy Then
             Me.BackgroundWorker1.CancelAsync()
         End If
-        Me.dtb.Desconectar()
     End Sub
 End Class

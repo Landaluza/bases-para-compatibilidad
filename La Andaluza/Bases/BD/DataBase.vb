@@ -101,7 +101,7 @@ Public Class DataBase
             If Not Me.Cnn Is Nothing Then
                 If Cnn.State = System.Data.ConnectionState.Open Then
                     Cnn.Close()
-                    Cnn.Dispose()
+                    'Cnn.Dispose()
                 End If
             End If
         End If

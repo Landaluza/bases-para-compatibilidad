@@ -14,7 +14,6 @@ Public Class gridsimpleform
     Protected filterManager As DgvFilterPopup.DgvFilterManager
     Protected mse As MicrosoftOfficeExporter
     Protected dataSource As DataTable
-    Protected dtb As DataBase
 
     Public Event AfterDelete(ByRef sender As Object, ByRef target As gridsimpleform)
     Public Event BeforeDelete(ByRef sender As Object, ByRef target As gridsimpleform)
@@ -51,7 +50,6 @@ Public Class gridsimpleform
     Public Sub New()
 
         InitializeComponent()
-        dtb = New DataBase()
     End Sub
     Public Sub New(ByRef sp As StoredProcedure, ByVal maestroid As String)
         InitializeComponent()
@@ -68,7 +66,6 @@ Public Class gridsimpleform
 
         filterManager = New DgvFilterManager(dgvGeneral)
         mse = New MicrosoftOfficeExporter
-        dtb = New DataBase()
         dgvFill()
     End Sub
 
@@ -204,6 +201,7 @@ Public Class gridsimpleform
                 If dgvGeneral.Rows.Count > 0 Then
                     For Each row As DataGridViewRow In dgvGeneral.SelectedRows
                         If Not row.DataGridView Is Nothing Then
+                            Dim dtb As New BasesParaCompatibilidad.DataBase
                             If sp.Delete(CType(row.Cells(campoId).Value, Integer), dtb) Then
                                 RaiseEvent AfterDelete(CType(dgvGeneral, Control), Me)
                             Else
@@ -349,6 +347,7 @@ Public Class gridsimpleform
     End Sub
 
     Protected Overridable Sub cargar_datos()
+        Dim dtb As New BasesParaCompatibilidad.DataBase
         dtb.PrepararConsulta(Me.sp.DataGridViewStoredProcedure)
         dataSource = dtb.Consultar
         'dataSource = dtb.Consultar(Me.sp.DataGridViewStoredProcedure, True)
@@ -405,7 +404,5 @@ Public Class gridsimpleform
         If Me.BackgroundWorker1.IsBusy Then
             Me.BackgroundWorker1.CancelAsync()
         End If
-
-        Me.dtb.Desconectar()
     End Sub
 End Class
