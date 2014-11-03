@@ -83,9 +83,8 @@ Public MustInherit Class StoredProcedure
     End Sub
 
     Protected Function InsertProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
+        dtb.Conectar()
         Try
-            dtb.Conectar()
-
 
             Dim insertCommand As System.Data.SqlClient.SqlCommand = dtb.Comando(insertProcedureName)
             insertCommand.CommandType = CommandType.StoredProcedure
@@ -131,8 +130,8 @@ Public MustInherit Class StoredProcedure
     End Function
 
     Protected Function UpdateProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
+        dtb.Conectar()
         Try
-            dtb.Conectar()
 
             Dim updateCommand As System.Data.SqlClient.SqlCommand = dtb.Comando(updateProcedureName)
             updateCommand.CommandType = CommandType.StoredProcedure
@@ -178,9 +177,10 @@ Public MustInherit Class StoredProcedure
 
     Protected Function DeleteProcedure(ByRef dbo As DataBussines, ByRef dtb As DataBase) As Boolean
         Dim deleteCommand As System.Data.SqlClient.SqlCommand
+        dtb.Conectar()
 
         Try
-            dtb.Conectar()
+
 
             deleteCommand = dtb.Comando(deleteProcedureName)
             deleteCommand.CommandType = CommandType.StoredProcedure
