@@ -228,9 +228,9 @@ Public Class DataBase
     End Function
 
 
-    'deprecated
-    Public Function Consultar(ByVal Cadena As String, procedure As Boolean) As DataTable
-        PrepararConsulta(Cadena)
-        Return Me.Consultar()
-    End Function
+    ''deprecated
+    'Public Function Consultar(ByVal Cadena As String, procedure As Boolean) As DataTable
+    '    PrepararConsulta(Cadena)
+    '    Return Me.Consultar()
+    'End Function
 End Class
