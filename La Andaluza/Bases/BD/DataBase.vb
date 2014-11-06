@@ -194,6 +194,12 @@ Public Class DataBase
     End Sub
 
     Public Sub AñadirParametroConsulta(ByVal nombre As String, ByVal valor As Object)
+        If TypeOf valor Is String Then
+            If valor = "null" Then
+                command.Parameters.AddWithValue(nombre, Convert.DBNull)
+                Return
+            End If
+        End If
         command.Parameters.AddWithValue(nombre, valor)
     End Sub
 
@@ -215,7 +221,7 @@ Public Class DataBase
         End Try
     End Function
 
-    Public Function Consultar(alteraciones As Boolean) As Boolean
+    Public Function Execute() As Boolean
         Try
             command.ExecuteNonQuery()
             Return True
