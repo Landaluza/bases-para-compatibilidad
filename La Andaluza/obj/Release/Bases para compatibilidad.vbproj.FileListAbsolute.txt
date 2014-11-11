@@ -1,0 +1,36 @@
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.dll.config
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.pdb
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\es\BasesParaCompatibilidad.resources.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\DgvFilterPopup.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\Microsoft.Office.Interop.Word.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Configuration.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Data.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Deployment.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Drawing.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Runtime.Serialization.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Windows.Forms.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\System.Xml.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\office.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\Microsoft.Vbe.Interop.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\Microsoft.Office.Interop.Word.xml
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\Bases para compatibilidad.vbprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.glassPanel.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.frmEspera.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.frmEntrada.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.FrmAheredarOld.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.FrmAHeredarEntOld.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.gridsimpleform.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.DetailedSimpleForm.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.MessageDialogue.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.Resources.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.FrmAheredarOld.es.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.gridsimpleform.es.resources
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\Bases para compatibilidad.vbproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\es\BasesParaCompatibilidad.resources.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.dll
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.pdb
