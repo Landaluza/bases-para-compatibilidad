@@ -1,3 +1,4 @@
+C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.pdb
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.dll.config
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.dll
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\bin\Release\BasesParaCompatibilidad.pdb
@@ -33,4 +34,3 @@ C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\Bases para compatibilidad.vbproj.GenerateResource.Cache
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\es\BasesParaCompatibilidad.resources.dll
 C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.dll
-C:\Users\Administrador\Desktop\git\Bases compatibilidad\La Andaluza\obj\Release\BasesParaCompatibilidad.pdb
