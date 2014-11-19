@@ -1,6 +1,12 @@
 ﻿Public Class Consola
 
-    Public Sub Teclea(ByRef Tecla As String)
+    Public Sub Teclea(ByRef Tecla As String, Optional ByVal quick As Boolean = False)
+
+        If quick Then
+            My.Computer.Keyboard.SendKeys(Tecla, False)
+            Return
+        End If
+
         My.Computer.Keyboard.SendKeys(Tecla, True)
         System.Threading.Thread.Sleep(100)
     End Sub
