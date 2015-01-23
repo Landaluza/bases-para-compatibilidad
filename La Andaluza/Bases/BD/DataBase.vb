@@ -163,30 +163,30 @@ Public Class DataBase
     '    End Try
     'End Function
 
-    Public Function ConsultaAlteraciones(ByVal strrealizarConsulta As String) As Boolean
-        If Me.transaction Is Nothing Then
-            Me.Conectar()
-        End If
+    'Public Function ConsultaAlteraciones(ByVal strrealizarConsulta As String) As Boolean
+    '    If Me.transaction Is Nothing Then
+    '        Me.Conectar()
+    '    End If
 
-        Dim cmd As System.Data.SqlClient.SqlCommand
-        cmd = New System.Data.SqlClient.SqlCommand(strrealizarConsulta, Me.Cnn)
+    '    Dim cmd As System.Data.SqlClient.SqlCommand
+    '    cmd = New System.Data.SqlClient.SqlCommand(strrealizarConsulta, Me.Cnn)
 
-        If Not Me.transaction Is Nothing Then
-            cmd.Transaction = Me.transaction
-        End If
+    '    If Not Me.transaction Is Nothing Then
+    '        cmd.Transaction = Me.transaction
+    '    End If
 
-        Try
-            cmd.ExecuteNonQuery()
-            Return True
-        Catch ex As Exception
-            Return False
-        Finally
-            cmd.Dispose()
-            If Me.transaction Is Nothing Then
-                Me.Desconectar()
-            End If
-        End Try
-    End Function
+    '    Try
+    '        cmd.ExecuteNonQuery()
+    '        Return True
+    '    Catch ex As Exception
+    '        Return False
+    '    Finally
+    '        cmd.Dispose()
+    '        If Me.transaction Is Nothing Then
+    '            Me.Desconectar()
+    '        End If
+    '    End Try
+    'End Function
 
     Public Sub PrepararConsulta(ByVal consulta As String)
         Me.Conectar()
